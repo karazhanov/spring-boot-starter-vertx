@@ -1,0 +1,20 @@
+plugins {
+    id "net.ltgt.apt" version "0.12"
+}
+
+group 'vert.x.rest'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter:${springboot}"
+
+    compile project(":starter.vertx")
+    compile project(":starter.annotations")
+//    compileOnly project(':starter.annotation.processor')
+    compileOnly "org.projectlombok:lombok:${lombok}"
+    apt "org.projectlombok:lombok:${lombok}"
+
+    apt project(':starter.annotation.processor')
+}

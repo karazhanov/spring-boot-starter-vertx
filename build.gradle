@@ -1,0 +1,22 @@
+group 'vert.x.rest'
+version '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: "java"
+    tasks.withType(JavaCompile) {
+        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+    repositories {
+        jcenter()
+    }
+    ext{
+        //dependencies versions
+        rxjava = '1.2.5'
+        vertx = '3.4.1'
+        lombok = "1.16.18"
+        springboot = "1.5.7.RELEASE"
+        gson = "2.8.2"
+    }
+}
+

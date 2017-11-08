@@ -1,0 +1,15 @@
+import org.gradle.internal.jvm.Jvm
+
+group 'vert.x.rest'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compileOnly files(Jvm.current().toolsJar)
+
+    compile 'com.squareup:javapoet:1.9.0'
+    compile 'org.springframework:spring-context:4.3.11.RELEASE'
+    compile project(":starter.annotations")
+    compile project(":starter.vertx")
+    compile "io.vertx:vertx-core:${vertx}"
+    compile "io.vertx:vertx-web:${vertx}"
+}

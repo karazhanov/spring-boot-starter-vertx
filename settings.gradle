@@ -1,0 +1,6 @@
+rootProject.name = 'spring-boot-starter-vertx'
+include 'starter.annotations'
+include 'starter.annotation.processor'
+include 'starter.vertx'
+include 'test'
+
