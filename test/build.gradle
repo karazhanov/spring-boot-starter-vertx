@@ -12,7 +12,7 @@ dependencies {
 
     compile project(":starter.vertx")
     compile project(":starter.annotations")
-//    compileOnly project(':starter.annotation.processor')
+
     compileOnly "org.projectlombok:lombok:${lombok}"
     apt "org.projectlombok:lombok:${lombok}"
 

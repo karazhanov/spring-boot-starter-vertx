@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-@ConditionalOnClass({EnableVertX.class, Vertx.class})
+@ConditionalOnClass(EnableVertX.class)
 @EnableConfigurationProperties(VertXProperties.class)
 public class VertXAutoConfiguration {
 
@@ -85,6 +85,7 @@ public class VertXAutoConfiguration {
 
         @Override
         public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+            log.error("Registrator.setApplicationContext");
             Vertx vertx = applicationContext.getBean(Vertx.class);
             assert vertx != null;
             AbstractVerticle defaultServerVerticle= applicationContext.getBean(AbstractVerticle.class);

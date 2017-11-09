@@ -22,8 +22,8 @@ public class DefaultServerVerticle extends AbstractVerticle {
     private CookieHandler cookieHandler;
     @Autowired
     private ErrorHandler errorHandler;
-    @Autowired
-    private StaticHandler staticHandler;
+//    @Autowired
+//    private StaticHandler staticHandler;
     @Autowired
     private TimeoutHandler timeoutHandler;
     @Autowired

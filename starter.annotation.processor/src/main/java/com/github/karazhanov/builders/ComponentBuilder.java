@@ -16,6 +16,7 @@ import javax.lang.model.element.Modifier;
 public class ComponentBuilder {
 
     private String baseClassName;
+    private String packageName;
     private String basePath;
     private RequestMethod requestMethod;
     private String methodName;
@@ -24,6 +25,10 @@ public class ComponentBuilder {
 
     public void setBaseClassName(String baseClassName) {
         this.baseClassName = baseClassName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
     public void setBasePath(String basePath) {
@@ -44,6 +49,10 @@ public class ComponentBuilder {
 
     public void setImport(List<JCTree.JCImport> imports) {
         this.imports = imports;
+    }
+
+    public String getPackageName() {
+        return packageName;
     }
 
     List<JCTree.JCImport> getImports() {

@@ -3,16 +3,12 @@ package com.github.karazhanov.vertx.controllers;
 import io.vertx.core.Handler;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import rx.Observable;
 
 /**
  * @author karazhanov on 18.10.17.
  */
-@Component
-@Slf4j
 public abstract class VertxController<T> implements Handler<RoutingContext> {
 
     @Autowired
@@ -55,5 +51,5 @@ public abstract class VertxController<T> implements Handler<RoutingContext> {
                 );
     }
 
-    protected abstract T execute(RoutingContext event);
+    protected abstract T execute(RoutingContext routingContext);
 }

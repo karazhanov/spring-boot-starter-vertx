@@ -37,6 +37,7 @@ public class ComponentGenerator {
         JCTree.JCCompilationUnit jcCompilationUnit = toUnit(mOriginElement, trees);
         if(jcCompilationUnit != null) {
             component.setImport(jcCompilationUnit.getImports());
+            component.setPackageName(jcCompilationUnit.getPackageName().toString());
         }
         component.setBasePath(vertXRestController.value());
         component.setBaseClassName(mOriginElement.getSimpleName().toString());
