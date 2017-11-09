@@ -18,6 +18,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @SpringBootConfiguration
 @EnableAutoConfiguration
-@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class))
+@ComponentScan(
+        basePackages = "com.github.karazhanov",
+        excludeFilters = @ComponentScan.Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class))
 public @interface EnableVertX {
 }
