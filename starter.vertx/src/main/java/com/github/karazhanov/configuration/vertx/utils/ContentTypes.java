@@ -1,4 +1,4 @@
-package com.github.karazhanov.vertx.utils;
+package com.github.karazhanov.configuration.vertx.utils;
 
 public final class ContentTypes {
     public static final String TEXT_HTML= "text/html";

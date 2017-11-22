@@ -1,13 +1,15 @@
-package com.github.karazhanov.vertx.controllers;
+package com.github.karazhanov.configuration.vertx.controllers;
 
 import io.vertx.core.Handler;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import org.springframework.stereotype.Component;
 import rx.Observable;
 
 /**
  * @author karazhanov on 18.10.17.
  */
+@Component
 public abstract class VertxController<T> implements Handler<RoutingContext> {
 
     private ResponseSender response;

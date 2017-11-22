@@ -5,8 +5,8 @@ import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.util.List;
 import io.vertx.ext.web.RoutingContext;
 import org.springframework.stereotype.Component;
-import com.github.karazhanov.vertx.controllers.METHOD_TYPE;
-import com.github.karazhanov.vertx.controllers.VertxController;
+import com.github.karazhanov.configuration.vertx.controllers.METHOD_TYPE;
+import com.github.karazhanov.configuration.vertx.controllers.VertxController;
 
 import javax.lang.model.element.Modifier;
 

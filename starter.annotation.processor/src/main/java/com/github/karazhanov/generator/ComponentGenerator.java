@@ -8,7 +8,7 @@ import com.github.karazhanov.annotations.methods.PUT;
 import com.github.karazhanov.annotations.params.Path;
 import com.github.karazhanov.ast.AstBodyCode;
 import com.github.karazhanov.builders.ComponentBuilder;
-import com.github.karazhanov.vertx.controllers.METHOD_TYPE;
+import com.github.karazhanov.configuration.vertx.controllers.METHOD_TYPE;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.CodeBlock;
 import com.sun.source.util.TreePath;

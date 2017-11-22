@@ -1,4 +1,4 @@
-package com.github.karazhanov.vertx.controllers;
+package com.github.karazhanov.configuration.vertx.controllers;
 
 import io.vertx.ext.web.RoutingContext;
 

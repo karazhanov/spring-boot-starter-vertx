@@ -1,6 +1,6 @@
-package com.github.karazhanov.vertx.controllers;
+package com.github.karazhanov.configuration.vertx.controllers;
 
-import com.github.karazhanov.vertx.utils.ContentTypes;
+import com.github.karazhanov.configuration.vertx.utils.ContentTypes;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.http.HttpServerResponse;

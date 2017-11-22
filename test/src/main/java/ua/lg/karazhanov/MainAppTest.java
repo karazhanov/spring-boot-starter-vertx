@@ -1,8 +1,11 @@
-package com.github.karazhanov;
+package ua.lg.karazhanov;
 
 import com.github.karazhanov.configuration.EnableVertX;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
  * @author karazhanov on 06.11.17.

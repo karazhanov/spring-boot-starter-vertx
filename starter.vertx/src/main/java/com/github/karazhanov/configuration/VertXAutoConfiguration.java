@@ -1,8 +1,8 @@
 package com.github.karazhanov.configuration;
 
-import com.github.karazhanov.vertx.DefaultServerVerticle;
-import com.github.karazhanov.vertx.controllers.ResponseFailSender;
-import com.github.karazhanov.vertx.controllers.ResponseSender;
+import com.github.karazhanov.configuration.vertx.DefaultServerVerticle;
+import com.github.karazhanov.configuration.vertx.controllers.ResponseFailSender;
+import com.github.karazhanov.configuration.vertx.controllers.ResponseSender;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.ext.web.handler.*;
@@ -85,7 +85,6 @@ public class VertXAutoConfiguration {
 
         @Override
         public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-            log.error("Registrator.setApplicationContext");
             Vertx vertx = applicationContext.getBean(Vertx.class);
             assert vertx != null;
             AbstractVerticle defaultServerVerticle= applicationContext.getBean(AbstractVerticle.class);

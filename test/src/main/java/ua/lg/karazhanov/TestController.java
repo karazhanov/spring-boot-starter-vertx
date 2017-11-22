@@ -1,7 +1,7 @@
-package com.github.karazhanov;
+package ua.lg.karazhanov;
 
-import com.github.karazhanov.vertx.controllers.METHOD_TYPE;
-import com.github.karazhanov.vertx.controllers.VertxController;
+import com.github.karazhanov.configuration.vertx.controllers.METHOD_TYPE;
+import com.github.karazhanov.configuration.vertx.controllers.VertxController;
 import io.vertx.ext.web.RoutingContext;
 import org.springframework.stereotype.Component;
 

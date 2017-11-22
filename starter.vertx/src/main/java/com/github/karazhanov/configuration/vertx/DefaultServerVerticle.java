@@ -1,9 +1,9 @@
-package com.github.karazhanov.vertx;
+package com.github.karazhanov.configuration.vertx;
 
 import com.github.karazhanov.configuration.VertXProperties;
-import com.github.karazhanov.vertx.controllers.ResponseFailSender;
-import com.github.karazhanov.vertx.controllers.ResponseSender;
-import com.github.karazhanov.vertx.controllers.VertxController;
+import com.github.karazhanov.configuration.vertx.controllers.ResponseFailSender;
+import com.github.karazhanov.configuration.vertx.controllers.ResponseSender;
+import com.github.karazhanov.configuration.vertx.controllers.VertxController;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
@@ -31,13 +31,11 @@ public class DefaultServerVerticle extends AbstractVerticle {
     private TimeoutHandler timeoutHandler;
     @Autowired
     private VertXProperties properties;
-
     @Autowired
     private ResponseSender response;
     @Autowired
     private ResponseFailSender responseFail;
-
-    @Autowired(required = false)
+    @Autowired
     private Collection<VertxController> vertxControllers;
 
     @Override

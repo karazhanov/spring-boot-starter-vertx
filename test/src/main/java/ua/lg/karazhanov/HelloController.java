@@ -1,4 +1,4 @@
-package com.github.karazhanov;
+package ua.lg.karazhanov;
 
 import com.github.karazhanov.annotations.VertXRestController;
 import com.github.karazhanov.annotations.params.Path;
