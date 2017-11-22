@@ -3,7 +3,6 @@ package com.github.karazhanov.vertx.controllers;
 import io.vertx.core.Handler;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import rx.Observable;
 
 /**
@@ -11,9 +10,7 @@ import rx.Observable;
  */
 public abstract class VertxController<T> implements Handler<RoutingContext> {
 
-    @Autowired
     private ResponseSender response;
-    @Autowired
     private ResponseFailSender responseFail;
 
     private METHOD_TYPE methodType;
@@ -24,7 +21,9 @@ public abstract class VertxController<T> implements Handler<RoutingContext> {
         this.path = path;
     }
 
-    public void addToRouting(Router router) {
+    public void addToRouting(Router router, ResponseSender response, ResponseFailSender responseFail) {
+        this.response = response;
+        this.responseFail = responseFail;
         switch (methodType) {
             case GET:
                 router.get(path).handler(this);
