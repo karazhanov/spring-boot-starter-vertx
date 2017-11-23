@@ -15,6 +15,7 @@ import static java.util.Arrays.asList;
 @Data
 @ConfigurationProperties(prefix = "vertx")
 public class VertXProperties {
+    private boolean showDebugInfo = false;
     private int port = 80;
     private long requestTimeout = 1000;
     private Collection<String> staticFileExtensions = asList(".html", ".js", ".js.map", ".css.map", ".css", ".jpg", ".jpeg", ".png", ".gif", ".svg", ".ico");

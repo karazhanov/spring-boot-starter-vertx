@@ -91,7 +91,7 @@ public class VertXAutoConfiguration {
             assert defaultServerVerticle != null;
             vertx.deployVerticle(defaultServerVerticle, e ->  {
                 if(e.failed()){
-                    log.error("Fail to deploy server verticle. Shutdown vertx.");
+                    log.error("Fail to deploy server verticle. Shutdown vertx.", e);
                     vertx.close();
                 }
             });

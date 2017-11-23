@@ -8,6 +8,7 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpServer;
+import io.vertx.ext.web.Route;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.*;
@@ -15,9 +16,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
+import java.util.List;
 
 @Slf4j
 public class DefaultServerVerticle extends AbstractVerticle {
+
 
     @Autowired
     private BodyHandler bodyHandler;
@@ -59,6 +62,10 @@ public class DefaultServerVerticle extends AbstractVerticle {
             }
         }).failureHandler(errorHandler);
 
+        if (properties.isShowDebugInfo()) {
+            printRoutes(router);
+        }
+
         int serverPort = properties.getPort();
         httpServer
                 .requestHandler(router::accept)
@@ -72,6 +79,8 @@ public class DefaultServerVerticle extends AbstractVerticle {
                     }
                 });
     }
+
+
 
     private void handleStatic(RoutingContext rc) {
         String path = rc.request().path();
@@ -87,5 +96,31 @@ public class DefaultServerVerticle extends AbstractVerticle {
         if (vertxControllers != null) {
             vertxControllers.forEach(vertxController -> vertxController.addToRouting(router, response, responseFail));
         }
+    }
+
+    private void printRoutes(Router router) {
+        List<Route> routes = router.getRoutes();
+        log.info("Utils Vert.X handlers");
+        for (Route route : routes) {
+            if (route.getPath() == null) {
+                log.info("\t" + foundHandlerClass(route));
+            }
+        }
+        log.info("REST Vert.X handlers");
+        for (Route route : routes) {
+            if (route.getPath() != null) {
+                log.info("\t" + route.getPath() + " -> " + foundHandlerClass(route));
+            }
+        }
+    }
+
+    private static final String HANDLER = "handler:";
+    private static final String COMMERCIAL_AT = "@";
+
+    private String foundHandlerClass(Route route) {
+        String s = route.toString();
+        int startIndex = s.indexOf(HANDLER) + HANDLER.length();
+        int endIndex = s.indexOf(COMMERCIAL_AT);
+        return s.substring(startIndex, endIndex);
     }
 }
