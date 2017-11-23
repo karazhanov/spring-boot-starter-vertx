@@ -1,9 +1,28 @@
 # Spring boot starter for Vert.X
 
+In **build.gradle** add 
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+    
+    dependencies {
+        compile ("com.github.karazhanov:spring-boot-starter-vertx:VERSION") {
+            exclude module: 'test'
+        }
+    }
+Last **VERSION="0.0.7"**
+
+In **application.properties** you can add 
+
+    vertx.port=8080
+    vertx.requestTimeout=2000
+    vertx.showDebugInfo=true
+    vertx.staticFileExtensions=.html,.js
+
 For enable this for SpringBoot just annotate **@EnableVertX**
 
     @SpringBootApplication
-    @ComponentScan
     @EnableVertX
     public class MainAppTest {
         public static void main(String[] args) {
